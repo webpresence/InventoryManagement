@@ -76,6 +76,62 @@ For detailed information on the API, refer to the following documentation availa
 - [InventoryManagement.API.xml](./InventoryManagement.API.xml) for XML documentation of the API.
 - [InventoryManagement_API_Documentation_V1_0.pdf](./InventoryManagement_API_Documentation_V1_0.pdf) for PDF documentation of the API.
 
+  ## Obtaining a Token
+
+### Register a New User (Optional)
+If you don't already have a user account, you need to register one. Send a `POST` request to the `api/Auth/register` endpoint with the required user information.
+
+**Example Request:**
+
+```json
+POST /api/Auth/register
+{
+    "email": "user@example.com",
+    "password": "YourSecurePassword"
+}
+```
+### Login to Obtain a Token
+Send a POST request to the api/Auth/login endpoint using the registered user's credentials.
+
+```json
+POST /api/Auth/login
+{
+    "email": "user@example.com",
+    "password": "YourSecurePassword"
+}
+```
+
+**Example Response:**
+
+```json
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ..."
+}
+
+```
+
+### Using the Token to Access Secured Endpoints
+Once you have the token, include it in the Authorization header as a Bearer token when making requests to secured endpoints.
+
+**Using Postman:**
+In Postman, make a new request to GET **/api/InventoryItems**.
+Under the "Authorization" tab, select "Bearer Token" and paste your token into the token field.
+**Using curl:**
+
+```bash
+curl -X GET "https://localhost:44334/api/InventoryItems" -H "accept: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ..."
+
+```
+
+This command sends a GET request to the api/InventoryItems endpoint with the authorization token included in the header.
+
+
+> **Note:**
+>
+> - Replace "https://localhost:44334/api/InventoryItems" with the actual URL of your API if different.
+> - Ensure the token is valid and has not expired, as expired tokens will result in unauthorized access errors.
+
+
 ## Conclusion
 
 The Inventory Management System is designed for security and efficiency, facilitating easy extension and maintenance while safeguarding against common web vulnerabilities. The system's architecture and security measures ensure a robust solution for inventory management.
