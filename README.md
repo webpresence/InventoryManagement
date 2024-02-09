@@ -79,3 +79,13 @@ For detailed information on the API, refer to the following documentation availa
 ## Conclusion
 
 The Inventory Management System is designed for security and efficiency, facilitating easy extension and maintenance while safeguarding against common web vulnerabilities. The system's architecture and security measures ensure a robust solution for inventory management.
+
+## License
+
+Copyright (c) [2024] [Olivers Vilks]
+
+This project is available for non-commercial use. Individuals and educational institutions are free to use, modify, and distribute the software provided in this project for educational and research purposes. Commercial use by companies and for-profit organizations is strictly prohibited without explicit permission from the copyright owner.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
