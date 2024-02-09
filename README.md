@@ -67,8 +67,8 @@ The system is organized into four main projects:
 
 ## Swagger Documentation
 
-- **Swagger UI**: Accessible at [https://localhost:44334/swagger](https://localhost:44334/swagger) for interactive API documentation and testing.
-- **Swagger JSON Schema**: Available at [https://localhost:44334/swagger/v1/swagger.json](https://localhost:44334/swagger/v1/swagger.json) for integration and development purposes.
+- **Swagger UI**: Accessible at [https://localhost:44334/swagger](https://localhost:44334/swagger) for interactive API documentation and testing. (When project is run in Debug mode).
+- **Swagger JSON Schema**: Available at [https://localhost:44334/swagger/v1/swagger.json](https://localhost:44334/swagger/v1/swagger.json) for integration and development purposes. (When project is run in Debug mode).
 
 ## API Descriptions
 
