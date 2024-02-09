@@ -1,0 +1,254 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InventoryManagement.API</name>
+    </assembly>
+    <members>
+        <member name="T:AuthController">
+            <summary>
+            Controller for handling authentication-related requests.
+            </summary>
+        </member>
+        <member name="M:AuthController.#ctor(Microsoft.AspNetCore.Identity.UserManager{InventoryManagement.Infrastructure.Identity.ApplicationUser},Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:AuthController"/> class.
+            </summary>
+            <param name="userManager">The user manager for managing user accounts.</param>
+            <param name="configuration">The configuration instance.</param>
+        </member>
+        <member name="M:AuthController.Login(InventoryManagement.API.DTOs.LoginDto)">
+            <summary>
+            Authenticates a user based on email and password.
+            </summary>
+            <param name="model">The login model containing email and password.</param>
+            <returns>An IActionResult representing the authentication result.</returns>
+        </member>
+        <member name="M:AuthController.Register(InventoryManagement.API.DTOs.RegisterDto)">
+            <summary>
+            Registers a new user.
+            </summary>
+            <param name="model">The registration model containing user details.</param>
+            <returns>An IActionResult representing the registration result.</returns>
+        </member>
+        <member name="T:InventoryManagement.API.Controllers.InventoryItemsController">
+            <summary>
+            Controller for managing inventory items.
+            </summary>
+        </member>
+        <member name="M:InventoryManagement.API.Controllers.InventoryItemsController.#ctor(InventoryManagement.Domain.Interfaces.IInventoryService,AutoMapper.IMapper)">
+            <summary>
+            Initializes a new instance of the <see cref="T:InventoryManagement.API.Controllers.InventoryItemsController"/> class with specified inventory service and mapper.
+            </summary>
+            <param name="inventoryService">The service for inventory operations.</param>
+            <param name="mapper">The mapper for object transformations.</param>
+        </member>
+        <member name="M:InventoryManagement.API.Controllers.InventoryItemsController.GetAllInventoryItems">
+            <summary>
+            Retrieves all inventory items.
+            </summary>
+            <returns>A list of inventory items.</returns>
+        </member>
+        <member name="M:InventoryManagement.API.Controllers.InventoryItemsController.GetInventoryItem(System.Int64)">
+            <summary>
+            Retrieves a specific inventory item by ID.
+            </summary>
+            <param name="id">The ID of the inventory item.</param>
+            <returns>The inventory item if found; otherwise, NotFound result.</returns>
+        </member>
+        <member name="M:InventoryManagement.API.Controllers.InventoryItemsController.CreateInventoryItem(InventoryManagement.API.DTOs.InventoryItemCreateDto)">
+            <summary>
+            Creates a new inventory item.
+            </summary>
+            <param name="createDto">The inventory item data transfer object to create the item.</param>
+            <returns>The created inventory item.</returns>
+        </member>
+        <member name="M:InventoryManagement.API.Controllers.InventoryItemsController.UpdateInventoryItem(System.Int64,InventoryManagement.API.DTOs.InventoryItemUpdateDto)">
+            <summary>
+            Updates a specific inventory item by ID.
+            </summary>
+            <param name="id">The ID of the inventory item to update.</param>
+            <param name="updateDto">The inventory item data transfer object with updated fields.</param>
+            <returns>An IActionResult indicating the outcome of the operation.</returns>
+        </member>
+        <member name="M:InventoryManagement.API.Controllers.InventoryItemsController.DeleteInventoryItem(System.Int64)">
+            <summary>
+            Deletes a specific inventory item by ID.
+            </summary>
+            <param name="id">The ID of the inventory item to delete.</param>
+            <returns>An IActionResult indicating the outcome of the operation.</returns>
+        </member>
+        <member name="M:InventoryManagement.API.Controllers.InventoryItemsController.InventoryItemExists(System.Int64)">
+            <summary>
+            Checks if an inventory item exists by ID.
+            </summary>
+            <param name="id">The ID of the inventory item.</param>
+            <returns>true if the inventory item exists; otherwise, false.</returns>
+        </member>
+        <member name="T:InventoryManagement.API.DTOs.InventoryItemCreateDto">
+            <summary>
+            Represents a data transfer object for creating an inventory item.
+            </summary>
+        </member>
+        <member name="P:InventoryManagement.API.DTOs.InventoryItemCreateDto.Sku">
+            <summary>
+            Gets or sets the Stock Keeping Unit (SKU). Acts as a unique identifier for products.
+            </summary>
+        </member>
+        <member name="P:InventoryManagement.API.DTOs.InventoryItemCreateDto.Quantity">
+            <summary>
+            Gets or sets the quantity of the product available in the inventory.
+            </summary>
+        </member>
+        <member name="P:InventoryManagement.API.DTOs.InventoryItemCreateDto.Location">
+            <summary>
+            Gets or sets the location of the inventory item within a warehouse or storage area.
+            </summary>
+        </member>
+        <member name="P:InventoryManagement.API.DTOs.InventoryItemCreateDto.ExpirationDate">
+            <summary>
+            Gets or sets the expiration date of the inventory item. This is particularly important for perishable goods.
+            </summary>
+        </member>
+        <member name="P:InventoryManagement.API.DTOs.InventoryItemCreateDto.BatchNumber">
+            <summary>
+            Gets or sets the batch number for the inventory item. Useful for tracking products from the same production batch.
+            </summary>
+        </member>
+        <member name="T:InventoryManagement.API.DTOs.InventoryItemReadDto">
+            <summary>
+            Represents a data transfer object for reading an inventory item.
+            </summary>
+        </member>
+        <member name="P:InventoryManagement.API.DTOs.InventoryItemReadDto.Id">
+            <summary>
+            Gets or sets the primary key for the inventory item.
+            </summary>
+        </member>
+        <member name="P:InventoryManagement.API.DTOs.InventoryItemReadDto.Sku">
+            <summary>
+            Gets or sets the Stock Keeping Unit (SKU). Acts as a unique identifier for products.
+            </summary>
+        </member>
+        <member name="P:InventoryManagement.API.DTOs.InventoryItemReadDto.Quantity">
+            <summary>
+            Gets or sets the quantity of the product available in the inventory.
+            </summary>
+        </member>
+        <member name="P:InventoryManagement.API.DTOs.InventoryItemReadDto.Location">
+            <summary>
+            Gets or sets the location of the inventory item within a warehouse or storage area.
+            </summary>
+        </member>
+        <member name="P:InventoryManagement.API.DTOs.InventoryItemReadDto.ExpirationDate">
+            <summary>
+            Gets or sets the expiration date of the inventory item. This is particularly important for perishable goods.
+            </summary>
+        </member>
+        <member name="P:InventoryManagement.API.DTOs.InventoryItemReadDto.BatchNumber">
+            <summary>
+            Gets or sets the batch number for the inventory item. Useful for tracking products from the same production batch.
+            </summary>
+        </member>
+        <member name="T:InventoryManagement.API.DTOs.InventoryItemUpdateDto">
+            <summary>
+            Represents a data transfer object for updating an inventory item.
+            </summary>
+        </member>
+        <member name="P:InventoryManagement.API.DTOs.InventoryItemUpdateDto.Sku">
+            <summary>
+            Gets or sets the Stock Keeping Unit (SKU). Acts as a unique identifier for products.
+            </summary>
+        </member>
+        <member name="P:InventoryManagement.API.DTOs.InventoryItemUpdateDto.Quantity">
+            <summary>
+            Gets or sets the quantity of the product available in the inventory.
+            </summary>
+        </member>
+        <member name="P:InventoryManagement.API.DTOs.InventoryItemUpdateDto.Location">
+            <summary>
+            Gets or sets the location of the inventory item within a warehouse or storage area.
+            </summary>
+        </member>
+        <member name="P:InventoryManagement.API.DTOs.InventoryItemUpdateDto.ExpirationDate">
+            <summary>
+            Gets or sets the expiration date of the inventory item. This is particularly important for perishable goods.
+            </summary>
+        </member>
+        <member name="P:InventoryManagement.API.DTOs.InventoryItemUpdateDto.BatchNumber">
+            <summary>
+            Gets or sets the batch number for the inventory item. Useful for tracking products from the same production batch.
+            </summary>
+        </member>
+        <member name="T:InventoryManagement.API.DTOs.LoginDto">
+            <summary>
+            Represents a data transfer object for user login.
+            </summary>
+        </member>
+        <member name="P:InventoryManagement.API.DTOs.LoginDto.Email">
+            <summary>
+            Gets or sets the email address of the user.
+            </summary>
+        </member>
+        <member name="P:InventoryManagement.API.DTOs.LoginDto.Password">
+            <summary>
+            Gets or sets the password of the user.
+            </summary>
+        </member>
+        <member name="T:InventoryManagement.API.DTOs.RegisterDto">
+            <summary>
+            Represents a data transfer object for user registration.
+            </summary>
+        </member>
+        <member name="P:InventoryManagement.API.DTOs.RegisterDto.Email">
+            <summary>
+            Gets or sets the email address of the user.
+            </summary>
+        </member>
+        <member name="P:InventoryManagement.API.DTOs.RegisterDto.Password">
+            <summary>
+            Gets or sets the password of the user.
+            </summary>
+        </member>
+        <member name="T:InventoryManagement.API.Mapping.InventoryItemProfile">
+            <summary>
+            Represents the mapping profile for inventory items.
+            </summary>
+        </member>
+        <member name="M:InventoryManagement.API.Mapping.InventoryItemProfile.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:InventoryManagement.API.Mapping.InventoryItemProfile"/> class.
+            </summary>
+        </member>
+        <member name="T:InventoryManagement.API.Security.AntiXssMiddleware">
+            <summary>
+            Middleware to sanitize incoming requests to prevent Cross-Site Scripting (XSS) attacks.
+            </summary>
+        </member>
+        <member name="M:InventoryManagement.API.Security.AntiXssMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            Initializes a new instance of the <see cref="T:InventoryManagement.API.Security.AntiXssMiddleware"/> class.
+            </summary>
+            <param name="next">The next middleware in the pipeline.</param>
+        </member>
+        <member name="M:InventoryManagement.API.Security.AntiXssMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Invokes the middleware operation to sanitize the request body.
+            </summary>
+            <param name="httpContext">The <see cref="T:Microsoft.AspNetCore.Http.HttpContext"/> for the current request.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:InventoryManagement.API.Validation.FutureDateAttribute">
+            <summary>
+            Represents a custom validation attribute to ensure a date is in the future.
+            </summary>
+        </member>
+        <member name="M:InventoryManagement.API.Validation.FutureDateAttribute.IsValid(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>
+            Validates if the provided date is in the future.
+            </summary>
+            <param name="value">The date value to validate.</param>
+            <param name="validationContext">The validation context.</param>
+            <returns>A <see cref="T:System.ComponentModel.DataAnnotations.ValidationResult"/> indicating whether the validation was successful.</returns>
+        </member>
+    </members>
+</doc>
